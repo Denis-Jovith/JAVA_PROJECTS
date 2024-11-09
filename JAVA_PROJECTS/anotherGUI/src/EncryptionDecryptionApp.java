@@ -1,9 +1,12 @@
+//Imports
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Base64;
 
+
+//Creating a class for encryption
 public class EncryptionDecryptionApp {
 
     private JFrame frame;
