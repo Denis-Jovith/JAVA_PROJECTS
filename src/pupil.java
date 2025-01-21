@@ -13,6 +13,10 @@ public class pupil{
 class mein{
     public static void main(String args[]){
         pupil p=new pupil();
+        p.setName("Juma");
+//        System.out.println("The name is :" + p.getName());
+        p.setName("Nsajigwa");
+        p.display();
     }
 
 }
