@@ -3,7 +3,6 @@ import java.net.*;
 
 public class ClientServer {
 
-    // Server code
     static class Server extends Thread {
         public void run() {
             try {
@@ -24,23 +23,19 @@ public class ClientServer {
         }
     }
 
-    // Client code
-    static class Client {
-        public static void main(String[] args) {
-            // Start the server in a separate thread
-            new Server().start();
+    public static void main(String[] args) {
+        Thread serverThread = new Server();
+        serverThread.start();
 
-            try {
-                Thread.sleep(1000);  // Give server some time to start
+        try {
+            Thread.sleep(1000);
 
-                // Client sends a message to the server
-                Socket socket = new Socket("localhost", 1234);
-                PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
-                out.println("Hello from the client!");
-                socket.close();
-            } catch (IOException | InterruptedException e) {
-                System.out.println(e);
-            }
+            Socket socket = new Socket("localhost", 1234);
+            PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+            out.println("Hello from the client!");
+            socket.close();
+        } catch (IOException | InterruptedException e) {
+            System.out.println(e);
         }
     }
 }
