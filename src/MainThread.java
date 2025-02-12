@@ -17,7 +17,6 @@ class PresentationThread extends Thread {
     }
 
 
-    
 
     public static void main(String[] args) {
         new PresentationThread("Denis").start();
